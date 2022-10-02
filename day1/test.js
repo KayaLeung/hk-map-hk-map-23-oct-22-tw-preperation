@@ -1,31 +1,17 @@
-let prompt = require("prompt-sync")();
-// console.log(result, " ho jeng ahhh");
+let pattern = "+-+-+-+";
+// add space to the beginning,
+// chop out first last index of the pattern
 
-const MAX = 10;
+let start = 0;
 
-let min = 0;
-let max = 10;
-
-let answer = Math.floor(Math.random() * (MAX + 1));
-// for (let i = 0; i < 100; i++) {
-//   console.log(answer);
-// }
-
-let guess; //undefined
-
-let times = 0;
-
-console.log(answer);
-
-while (guess != answer) {
-  guess = parseInt(prompt(`please input a integer between ${min} and ${max} `));
-  if (guess < answer) min = guess;
-  else max = guess;
-  times++;
-  if (times > 2) {
-    console.log("you lose, bye");
-    return;
-  }
+let end = pattern.length;
+let space = "";
+while (end > start) {
+    console.log(space + pattern.slice(start, end));
+    // start++;
+    // end--;
+    // space += " ";
 }
 
-console.log("ok, you win!");
+
+console.log(pattern)
